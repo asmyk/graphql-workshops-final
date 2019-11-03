@@ -1,0 +1,86 @@
+{
+  "connection": "default",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "restaurant",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": ["created_at", "updated_at"],
+    "comment": ""
+  },
+  "attributes": {
+    "cover": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "address": {
+      "default": "",
+      "type": "string"
+    },
+    "website": {
+      "default": "",
+      "type": "string"
+    },
+    "phone": {
+      "default": "",
+      "type": "string"
+    },
+    "price": {
+      "default": "",
+      "type": "enumeration",
+      "enum": ["_1", "_2", "_3", "_4"]
+    },
+    "district": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "_1st",
+        "_2nd",
+        "_3rd",
+        "_4th",
+        "_5th",
+        "_6th",
+        "_7th",
+        "_8th",
+        "_9th",
+        "_10th",
+        "_11th",
+        "_12th",
+        "_13th",
+        "_14th",
+        "_15th",
+        "_16th",
+        "_17th",
+        "_18th",
+        "_19th",
+        "_20th"
+      ]
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "restaurant"
+    },
+    "category": {
+      "model": "category",
+      "via": "restaurants"
+    },
+    "opening_hours": {
+      "group": "opening_hours",
+      "min": 1,
+      "repeatable": true,
+      "required": true,
+      "type": "group"
+    }
+  }
+}
