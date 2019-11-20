@@ -21,7 +21,7 @@ export default function Register() {
 		onError: ({ graphQLErrors, networkError, operation, forward }) => {
 			if (graphQLErrors) {
 				for (let err of graphQLErrors) {
-					console.log(err);
+					console.error(err);
 				}
 			}
 		}

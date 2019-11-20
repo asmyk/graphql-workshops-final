@@ -28,7 +28,7 @@ export default function Login() {
 	const client = useApolloClient();
 	const [ register ] = useMutation(REGISTER_USER, {
 		onError(e) {
-			console.log(e);
+			console.error(e);
 		}
 	});
 	const [ login, { loading, error } ] = useMutation(LOGIN_USER, {
@@ -41,7 +41,7 @@ export default function Login() {
 		onError: ({ graphQLErrors, networkError, operation, forward }) => {
 			if (graphQLErrors) {
 				for (let err of graphQLErrors) {
-					console.log(err);
+					console.error(err);
 				}
 			}
 		}

@@ -24,8 +24,7 @@ export default function Header({ image }) {
 	const { data, loading, error } = useQuery(GET_LOGGED_USER);
 
 	if (loading) return <Loading />;
-	if (error) return <p>ERROR: {error.message}</p>;
-	console.log(data)
+	if (error) return <p>ERROR: {error.message}</p>; 
 	const email = data.me.email;
 	const username = data.me.username;
 	const avatar = data.me.picture;
