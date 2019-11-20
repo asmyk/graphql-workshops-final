@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'react-emotion';
 import { useApolloClient } from '@apollo/react-hooks';
  
-import { ReactComponent as ExitIcon } from '../assets/icons/exit.svg';
-
 export default function LogoutButton() {
   const client = useApolloClient();
   return (
@@ -14,7 +12,6 @@ export default function LogoutButton() {
         localStorage.clear();
       }}
     >
-      <ExitIcon />
       Logout
     </StyledButton>
   );
