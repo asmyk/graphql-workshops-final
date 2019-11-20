@@ -7,7 +7,7 @@ class ReviewsAPI extends RESTDataSource {
 		this.baseURL = BASE_URL;
 	}
 
-	reviewReducer(item) {
+	reviewReducer(item) { 
 		return {
 			id: item.id || 0,
 			cursor: `${item.id}`,

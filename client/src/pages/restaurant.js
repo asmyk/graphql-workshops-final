@@ -43,7 +43,7 @@ export default function Restaurant({ restaurantId }) {
 	const { data, loading, error } = useQuery(GET_RESTAURANT_DETAILS, { variables: { id: restaurantId } });
 	if (loading) return <Loading />;
 	if (error) return <p>ERROR: {error.message}</p>;
-
+ 
 	return (
 		<Fragment>
 			<RestaurantDetails restaurant={data.restaurant} />

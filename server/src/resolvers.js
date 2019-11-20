@@ -39,7 +39,7 @@ module.exports = {
 				const user = await dataSources.userAPI.login({ email, password });
 				return user;
 			} catch (error) {
-				throw new UserInputError('dupa', { user: { password: 'wrong password or email' } });
+				throw new UserInputError('Wrong Password', { user: { password: 'wrong password or email' } });
 			}
 		},
 		register: async (_, { email, password, username }, { dataSources }) => {
